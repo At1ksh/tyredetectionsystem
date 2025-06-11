@@ -15,11 +15,20 @@ def main():
         """, unsafe_allow_html=True
     )
     st.title("🔍 OXO Checking in CAL Line")
+
+    # Component selection dropdown
+    component = st.selectbox(
+        "Select the car component to OXO check:",
+        ["Smile line", "Interior seats", "Speaker system", "Car lettering", "Bonnet color", "Tyres"]
+    )
+
+    if component != "Tyres":
+        st.info("OXO checking for this component is being worked on right now.")
+        return
+
     st.write("Upload up to four photos for YOLO processing. The results will be shown below each image.")
 
-    # Let user input the model path
     model = YOLO("my_model.pt")
-    
 
     uploaded_files = st.file_uploader("Choose up to 4 images", type=["jpg", "jpeg", "png"], accept_multiple_files=True)
 
