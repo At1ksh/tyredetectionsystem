@@ -19,7 +19,7 @@ def main():
     st.write("Upload up to four photos for YOLO processing. The results will be shown below each image.")
 
     # Let user input the model path
-    model = YOLO("C:/Krishna/Jaguar/Post10June/tyre_dataset/yolo11tyre_v1/my_model.pt")
+    model = YOLO("my_model.pt")
     
 
     uploaded_files = st.file_uploader("Choose up to 4 images", type=["jpg", "jpeg", "png"], accept_multiple_files=True)
